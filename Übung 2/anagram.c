@@ -3,6 +3,10 @@
 #include <string.h>
 
 int is_anagram(char *word, char *compared) {
+    if (word == NULL || compared == NULL) {
+        printf("At least one String is NULL!");
+        return 0;
+    }
     if (strlen(word) != strlen(compared)) return 0;
 
     size_t i, j;
@@ -28,5 +32,7 @@ int main() {
     // test your code
     printf("%d\n", is_anagram("mehle", "helme"));
     printf("%d\n", is_anagram("boeing", "airbus"));
+    printf("%d\n", is_anagram("", ""));
+    printf("%llu\n", strlen(""));
     return EXIT_SUCCESS;
 }
